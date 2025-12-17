@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yandere Shift</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Nosifer&display=swap');
+      
+      .font-cute { font-family: 'Kosugi Maru', sans-serif; }
+      .font-horror { font-family: 'Nosifer', cursive; }
+      
+      /* Glitch effect for text */
+      .glitch {
+        position: relative;
+      }
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .glitch::before {
+        left: 2px;
+        text-shadow: -1px 0 red;
+        clip: rect(24px, 550px, 90px, 0);
+        animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+      }
+      .glitch::after {
+        left: -2px;
+        text-shadow: -1px 0 blue;
+        clip: rect(85px, 550px, 140px, 0);
+        animation: glitch-anim-2 3s infinite linear alternate-reverse;
+      }
+      @keyframes glitch-anim-1 {
+        0% { clip: rect(20px, 9999px, 10px, 0); }
+        100% { clip: rect(90px, 9999px, 100px, 0); }
+      }
+      @keyframes glitch-anim-2 {
+        0% { clip: rect(120px, 9999px, 20px, 0); }
+        100% { clip: rect(10px, 9999px, 140px, 0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "病娇模拟器：50天的转变",
+  "description": "一个视觉小说聊天机器人，你的高中暗恋对象在50天内慢慢发生转变。幸存下来并感化她。",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
